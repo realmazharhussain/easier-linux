@@ -1,0 +1,15 @@
+#!/bin/bash
+youtube-dl -F "$@" | tail -n +4
+echo -e -n "\nEnter Your Choice: "
+read -r choice
+echo
+args=("--no-mtime" "--output" "%(title)s.%(ext)s")
+case $choice in
+	140 | 249 | 250 | 251 )
+		args=("${args[@]}" "--embed-thumbnail")
+		;;
+	*)
+		args=("${args[@]}" "--all-subs" "--write-sub" "--embed-subs")
+		;;
+esac
+[ -n "$choice" ] && youtube-dl "${args[@]}" -f "$choice" "$@"

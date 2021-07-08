@@ -1,0 +1,28 @@
+#!/bin/bash
+EDITORS="editor nano vim vi"
+if [ -z "$EDITOR" ]; then
+  for EDITOR in $EDITORS; do
+    if which $EDITOR &>/dev/null; then
+      break
+    fi
+  done
+fi
+if [ -z "$EDITOR" ]; then
+  echo no terminal-based text editor found
+  exit 1
+fi
+for file in "$@"; do
+  if ! touch "$file" 2> /dev/null; then
+     if ! sudo touch "$file" 2> /dev/null; then
+       echo "could not find or create file '$file'"
+       notfound=true
+     fi
+  fi
+  if [ "$notfound" != "true" ]; then
+    if [ -w "$file" ]; then
+      $EDITOR "$file"
+    else
+      sudo $EDITOR "$file"
+    fi
+  fi
+done

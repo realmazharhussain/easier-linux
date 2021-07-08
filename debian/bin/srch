@@ -1,0 +1,2 @@
+#!/bin/bash
+(apt list | grep --color=auto "$@") 2>/dev/null
