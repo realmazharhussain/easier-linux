@@ -27,4 +27,6 @@ This SubDirectory contains files that enhance the fish command-line shell.
 
 - ### (repo-root)/fish/prompts/mazharhussain.fish
 
-  This file contains a fish prompt named `mazharhussain` inspired by Debian's default Bash prompt. Run `fish_config` from inside fish shell (it will open a web-browser) and then click on a web-page tab named `prompts`. You'll see this prompt listed there.
+  This file contains a fish prompt named `mazharhussain` inspired by Debian's default Bash prompt and based on `robbyrussell` fish prompt. Run `fish_config` from inside fish shell (it will open a web-browser) and then click on a **web-page tab** (not browser tab) named `prompts`. You'll see this prompt listed there.
+
+  **Thanks to the developer(s) of `robbyrussell` fish prompt. This prompt wouldn't have been possible without them.**

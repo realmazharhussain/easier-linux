@@ -1,3 +1,6 @@
+# This is a fish prompt based on `robbyrussell` fish prompt included in some versions of fish shell by default.
+# Thanks to the developer(s) of `robbyrussell` fish prompt. This prompt wouldn't have been possible without them.
+# All of the git related stuff is still an exact copy of `robbyrussell`' fish prompt's git related code.
 function fish_prompt
     set -gx __last_command_exit_status $status
 
