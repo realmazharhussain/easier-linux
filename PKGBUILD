@@ -1,6 +1,6 @@
 # Maintainer: Mazhar Hussain <mmazharhussainkgb1145@gmail.com>
 pkgname=easier-linux-git
-pkgver=unknown.unknown
+pkgver=5.97f054b
 pkgrel=1
 pkgdesc="Using Linux made easier"
 arch=(any)
@@ -15,8 +15,9 @@ conflicts=('easier-linux')
 #md5sums=('SKIP')
 
 pkgver() {
-#  cd "$srcdir"
-  cd ..
+  (echo -n 'pkgver(): '; pwd) >&2
+  mkdir -p "$srcdir"
+  cd "$srcdir"/..
   echo $(git rev-list --count HEAD 2>/dev/null || echo unknown).$(git rev-parse --short HEAD 2>/dev/null || echo unknown)
 }
 

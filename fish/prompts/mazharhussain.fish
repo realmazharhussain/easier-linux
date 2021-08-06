@@ -1,8 +1,5 @@
-# This is a fish prompt based on `robbyrussell` fish prompt included in some versions of fish shell by default.
-# Thanks to the developer(s) of `robbyrussell` fish prompt. This prompt wouldn't have been possible without them.
-# All of the git related stuff is still an exact copy of `robbyrussell`' fish prompt's git related code.
 function fish_prompt
-    set -gx __last_command_exit_status $status
+    set -x __last_command_exit_status $status
 
     if not set -q -g __fish_mazharhussain_functions_defined
         set -g __fish_mazharhussain_functions_defined
@@ -80,7 +77,7 @@ function fish_prompt
 
 
     set -g fish_prompt_pwd_dir_length 0
-    set -l cwd $blue(prompt_pwd)
+    set -l cwd $brblue(prompt_pwd)
     
     set -l hostName $green(prompt_hostname)
     
@@ -103,7 +100,7 @@ function fish_prompt
             set Dirty "$yellow✗"
         end
         set -l repo_branch $red(_repo_branch_name $repo_type)
-        set repo_info "$normal:$green$repo_type($repo_branch$Dirty$blue)"
+        set repo_info "$normal:$green$repo_type$brblue($repo_branch$Dirty$brblue)"
 
     end
 
